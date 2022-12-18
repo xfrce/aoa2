@@ -1,0 +1,419 @@
+{
+    "activos": [
+        {
+            "_id": "ObjectId",
+            "id": "integer",
+            "de": "text",
+            "detalle": ["... ObjectId"],
+            "mantenimiento": ["... ObjectId"],
+            "activo_tp": "ObjectId",
+            "archivo": ["... ObjectId"],
+            "impuestos": ["... ObjectId"],
+            "seguros": ["... ObjectId"],
+            "pagos_extras": [
+                {
+                    "fecha": "text", 
+                    "monto": "float",
+                    "comentario": "text",
+                    "st": "integer"
+                }
+            ],
+            "valor": [
+                {
+                    "valor": "text",
+                    "src": "text",
+                    "fecha": "text",
+                    "st": "integer"
+                }
+            ],
+            "a inventariar adicional": [
+                {
+                    "tp": "text",
+                    "icon": "text",
+                    "de": "text",
+                    "valor": [
+                        {"tp": "text", "de": "text", "fecha": "text"}
+                    ]
+                }
+            ],
+            "st": "integer"
+        }
+    ],
+    "activo_tps": [
+        {
+            "_id": "ObjectId",
+            "id": "integer",
+            "icon": "text",
+            "de": "text",
+            "detalle": ["... ObjectId"],
+            "identificador": "text",
+            "mantenimiento": ["... ObjectId"],
+            "color": ["text"],
+            "st": "integer"
+        }
+    ],
+    "alertas": [
+        {
+            "_id": "ObjectId",
+            "activo": "ObjectId",
+            "origen": "text",
+            "de": "text",
+            "fecha": "text",
+            "st": "integer"
+        }
+    ],
+    "archivos": [
+        {
+            "_id": "ObjectId",
+            "activo": "ObjectId",
+            "tipo": "text",
+            "de": "text",
+            "path": "text",
+            "src": "text",
+            "obs": "text",
+            "fecha": "text",
+            "st": "integer"
+        }
+    ],
+   
+    "carteras": [
+        {
+            "_id" : "ObjectId",
+            "id" : "integer",
+            "monto": "float",
+            "periodo": ["fecha inicio","fecha fin"],
+            "fecha_ini": "text",
+            "fecha_upd": "text",
+            "pagado": "float",
+            "comunicaciones": ["... ObjectId"],
+            "pago": ["... ObjectId"],
+            "st": "integer"
+        }
+    ],    
+
+
+    "clientes": [
+        {
+            "_id": "ObjectId",
+            "de": "text",
+            "doc": "text",
+            "representante": "text",
+            "representante_doc": "text",
+            "cliente_contacto": ["... ObjectId"],
+            "representante_contacto": ["... ObjectId"],
+            "footer": "text",
+            "theme": "text",
+            "periodo_ini": "text",
+            "period_fin": "text",
+            "activos_cant": "integer",
+            "alert_cant": "integer",
+            "avance_cant": "float",
+            "evento": ["... ObjectId"],
+            "contrato": ["... ObjectId"],
+            "levantamiento": [],
+            "activo": ["... ObjectId"],
+            "cartera": ["... ObjectId"],
+            "locatario": ["... ObjectId"],
+            "usuario": ["... ObjectId"],
+            "comunicacion": ["... ObjectId"],
+            "st": "integer"
+        }
+    ],
+    "comparendo":[
+        {
+            "_id": "ObjectId",
+            "numero": "text",
+            "fecha_hora": "text",
+            "lugar": "text",
+            "entidad": "text",
+            "suceso": "text",
+            "valor": "text",
+            "obs": "text",
+            "resultado": "text",
+            "st": "integer"
+        }
+    ],
+    "comunicaciones": [
+        {
+            "_id": "ObjectId",
+            "via": "email|telf",
+            "tipo": "text",
+            "obs": "text",
+            "fecha": "text",
+            "user": "integer",
+            "st": "integer"
+        }
+    ],
+    "configs": [
+        {
+            "_id" : "ObjectId",
+            "theme": "ObjectId",
+            "de": "text",
+            "title": "text",
+            "footer": "text",
+            "color1": "text",
+            "color2": "text",
+            "st": "integer"
+        }
+    ],
+    "contactos": [
+        {
+            "_id": "ObjectId",
+            "id": "integer",
+            "contacto_tp": "ObjectId",
+            "de": "text",
+            "valor": "text"
+        }
+    ],
+    "contacto_tps": [
+        {
+            "_id": "ObjectId",
+            "id": "integer",
+            "de": "text",
+            "icon": "text",
+            "st": "integer"
+        }
+    ],
+    "contrato": [
+        {
+            "_id": "ObjectId",
+            "inicio": "text",
+            "fin": "text",
+            "monto": "float",
+            "detalle": [
+                {"concepto": "text", "valor": "text"}
+            ]
+        }
+    ],
+    "departamentos": [
+        {
+            "_id": "ObjectId",
+            "id": "integer",
+            "de": "text",
+            "ciudad": ["... text"],
+            "st": "integer"
+        }
+    ],
+    "eventos": [
+        {
+            "_id": "ObjectId",
+            "de": "text",
+            "fecha": "text",
+            "st": "integer"
+        }
+    ],
+    "impuestos":[
+        {
+            "_id": "ObjectId",
+            "fecha_pago": "text",
+            "agno_vigencia": "integer",
+            "entidad": "text",
+            "soporte": "text",
+            "st": "integer"
+        }
+    ],
+    "inventarios": [
+        {
+            "_id": "ObjectId",
+            "id": "integer",
+            "responsable": "ObjectId",
+            "fecha_ini": "text",
+            "fecha_fin": "text",
+            "activo": ["... ObjectId"],
+            "st": "integer"
+        }
+    ],
+
+    "locatarios": [
+        {
+            "_id": "ObjectId",
+            "de": "text",
+            "documento": "text",
+            "contacto": ["... ObjectId"],
+            "comunicacion": ["... ObjectId"],
+            "st": "integer"
+        }
+    ],
+
+    "logs": [
+        {
+            "_id": "ObjectId",
+            "old": "text",
+            "new": "text",
+            "ip": "text",
+            "user": "text",
+            "fecha": "text",
+            "clase": "text",
+            "st": "integer"
+        }
+    ],
+    "mantenimientos": [
+        {
+            "_id": "ObjectId",
+            "de": "text",
+            "tipo": "Prevetivo|Correctivo",
+            "subtipo": "text",
+            "certificado": {
+                "número": "text",
+                "fecha_expedicion": "text",
+                "fecha_vigencia": "text"
+            },
+            "src": "text",
+            "estado_final": "text",
+            "fecha": "text",
+            "var_control": [
+                {"de": "text", "fecha": "text", "st": "integer"}
+            ],
+            "var_preventivo": [
+                {"de": "text", "fecha": "text", "st": "integer"}
+            ],
+            "var_correctivos": [
+                {"de": "text", "fecha": "text", "st": "integer"}
+            ],
+            "st": "integer"
+        }
+    ],
+
+
+
+                
+
+    "oficinas": [
+        {
+            "_id": "ObjectId",
+            "de": "text",
+            "coordenadas": ["text", "text"],
+            "cliente": ["... ObjectId"],
+            "st": "integer"
+        }
+    ],
+
+    "pagos": [
+        {
+            "_id": "ObjectId",
+            "cliente/locatario": "ObjectId",
+            "fecha": "text", 
+            "monto": "float",
+            "obs": "text", 
+            "archivo": "ObjectId",
+            "st": "integer"
+        }
+    ],
+
+    "parametros": [
+        {
+            "_id": "ObjectId",
+            "id": "integer",
+            "icon": "text",
+            "de": "text",
+            "tipo": "text",
+            "obs": "text",
+            "src": "text",
+            "valor": [
+                {"tp": "text", "de": "text", "fecha": "text"}
+            ],
+            "obligatorio": "boolean",
+            "st": "integer"
+        }
+    ],
+
+    "secuencias": [
+        {
+            "_id": "ObjectId",
+            "id": "integer",
+            "de": "text",
+            "clase": "text"
+        }
+    ],
+    "seguros":[
+        {
+            "_id": "ObjectId",
+            "tipo": "text",
+            "numero_poliza": "text",
+            "fecha_expedicion": "text",
+            "fecha_vigencia": "text",
+            "entidad": "text",
+            "caratula": "text",
+            "estado": "Vigente",
+            "cobertura": "text",
+            "deducible": "text",
+            "afectacion": "tipo de siniestro: hurto, daños propios, incendio, defensa",
+            "st": "integer"
+        }
+    ],
+    "sts": [
+        {
+            "_id": "ObjectId",
+            "id": "integer",
+            "de": "text",
+            "clase": "text"
+        }
+    ],
+    "themes": [
+        {
+            "_id": "ObjectId",
+            "de": "text",
+            "logo1": "text",
+            "logo2": "text",
+            "colorPrimary": "text",
+            "colorOnPrimary": "text",
+            "colorPrimaryContainer": "text",
+            "colorOnPrimaryContainer": "text",
+            "colorPrimaryInverse": "text",
+            "colorSecondary": "text",
+            "colorOnSecondary": "text",
+            "colorSecondaryContainer": "text",
+            "colorOnSecondaryContainer": "text",
+            "colorTertiary": "text",
+            "colorOnTertiary": "text",
+            "colorTertiaryContainer": "text",
+            "colorOnTertiaryContainer": "text",
+            "st": "integer"
+        }
+    ],
+    "tokens": [
+        {
+            "_id": "ObjectId",
+            "id": "integer",
+            "user": "text",
+            "de": "text",
+            "ini": "text",
+            "fin": "text",
+            "ip": "text",
+            "st": "integer"
+        }
+    ],
+    "usuarios": [
+        {
+            "_id": "ObjectId",
+            "user": "text",
+            "password": "text",
+            "nombre": "text",
+            "on": "integer",
+            "datetime": "integer",
+            "usuario_tp": ["... ObjectId"],
+            "cliente": [
+                {"cliente": "... ObjectId", "usuario_tp": ["... ObjectId"], "st": "integer"}
+            ],
+            "st": "integer"
+        }
+    ],
+    "usuario_tps": [
+        {
+            "_id": "ObjectId",
+            "id": "integer",
+            "de": "text",
+            "acceso": ["text"],
+            "st": "integer"
+        }
+    ],
+    "zonas": [
+        {
+            "_id": "ObjectId",
+            "de": "text",
+            "coordenadas": ["text", "text"],
+            "oficina": ["... ObjectId"],
+            "st": "integer"
+        }
+    ]
+}
